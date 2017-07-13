@@ -1,0 +1,23 @@
+{
+  "name": "angular-issue-tracker",
+  "description": "Looks up issues in github for angular",
+  "main": "index.js",
+  "authors": [
+    "Eric Thomas"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "angular": "1.6.5",
+    "angular-route": "^1.6.5",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

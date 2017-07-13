@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="angularIssueTracker">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body data-ng-controller="mainController">
+<ng-view ng-cloak>
+        <div class="row">
+            <div class="col-md-12" style="margin:10px;">
+                <H2>Angular Reported Issues (Past 7 days)</H2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="accordion" style="margin:20px;" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel" ng-repeat="item in issues">
+                    <div class="panel-heading" style="background-color:lightblue;" id="heading_{{$index}}">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" data-target="#collapse_{{$index}}" aria-controls="collapse_{{$index}}">{{item.title}}</a>
+                        </h4>
+                    </div>
+                    <div id="collapse_{{$index}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_{{$index}}">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2" style="margin:10px;"><strong>user: </strong>{{item.user}}</div>
+                                <div class="col-md-2" style="margin:10px;"><strong>assignee: </strong>{{item.assignee}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p style="padding:20px" ng-bind-html="item.body"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-view>
+<script src="/vendor/angular/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

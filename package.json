@@ -1,0 +1,17 @@
+{
+  "name": "angular-issue-tracker",
+  "version": "1.0.0",
+  "description": "Looks up issues in github for angular",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Thomas",
+  "license": "ISC",
+  "dependencies": {
+    "angularjs": "0.0.1",
+    "bower": "^1.8.0",
+    "express": "^4.15.3",
+    "express-load": "^1.1.16"
+  }
+}
